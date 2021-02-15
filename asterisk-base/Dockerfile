@@ -17,6 +17,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
   opus-tools \
   postgresql-client-12 \
   postgresql-client-common \
+  sudo \
   unzip \
   wget \
   zlib1g \
