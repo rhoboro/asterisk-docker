@@ -1,2 +1,2 @@
-FROM rhoboro/asterisk-base:16.8.0
+FROM rhoboro/asterisk-base:20.4.0
 
