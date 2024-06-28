@@ -1,7 +1,7 @@
-FROM ubuntu:23.04
+FROM ubuntu:24.04
 
 ARG country_code=81
-ARG asterisk_version=20.4.0
+ARG asterisk_version=20.8.1
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -31,12 +31,12 @@ RUN useradd -U -m -s /bin/bash asterisk \
   && ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
 # Install Asterisk
-RUN wget -O - https://github.com/cisco/libsrtp/archive/v2.5.0.tar.gz | tar zx -C /usr/local/src \
-  && cd /usr/local/src/libsrtp-2.5.0 \
+RUN wget -O - https://github.com/cisco/libsrtp/archive/v2.6.0.tar.gz | tar zx -C /usr/local/src \
+  && cd /usr/local/src/libsrtp-2.6.0 \
   && ./configure --prefix=/usr/local/libsrtp --enable-openssl \
   && make \
   && make install \
-  && rm -rf /usr/local/src/libsrtp-2.5.0
+  && rm -rf /usr/local/src/libsrtp-2.6.0
 
 RUN wget -O - http://downloads.asterisk.org/pub/telephony/asterisk/releases/asterisk-${asterisk_version}.tar.gz | tar zx -C /usr/local/src \
   && cd /usr/local/src/asterisk-${asterisk_version} \

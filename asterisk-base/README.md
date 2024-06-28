@@ -1,4 +1,4 @@
 ```bash
-$ docker build -t rhoboro/asterisk-base:20.4.0 .
+$ docker build -t rhoboro/asterisk-base:20.8.1 .
 ```
 
